@@ -1,0 +1,3 @@
+plot "average_diagonal.txt" using 1:2 with lines, \
+	"best_diagonal.txt" using 1:2 with lines, \
+	"worst_diagonal.txt" using 1:2 with lines

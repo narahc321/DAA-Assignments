@@ -1,0 +1,3 @@
+plot "worst.txt" using 1:2 with lines, \
+	"best.txt" using 1:2 with lines, \
+	"average.txt" using 1:2 with lines

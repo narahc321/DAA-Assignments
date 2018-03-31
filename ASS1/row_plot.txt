@@ -1,0 +1,6 @@
+set title "ROW"
+plot "average_row.txt" using 1:2 with lines, \
+	"best_row.txt" using 1:2 with lines, \
+	"worst_row.txt" using 1:2 with lines;
+
+
