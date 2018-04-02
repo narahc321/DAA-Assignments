@@ -1,0 +1,5 @@
+set xlabel "n"
+set ylabel "time"
+plot "worst.txt" using 1:2 with linespoints title "Worst case", \
+	"best.txt" using 1:2 with linespoints title "Best case", \
+	"average.txt" using 1:2 with linespoints title "Average case"
