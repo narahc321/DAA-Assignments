@@ -1,0 +1,6 @@
+set xlabel "N"
+set ylabel "Time"
+plot "best.txt" title "Best" with linespoints,\
+ "average.txt" title "Random" with linespoints,\
+ "worst.txt" title "Worst" with linespoints;
+
