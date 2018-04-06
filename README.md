@@ -15,13 +15,13 @@ necessary experimentation and analysis with your algorithm.
 
 ## Assignment 3 Question :
 
-Write an efficient algorithm to achieve the following. Given a set of numbers, find out the smallest and the largest numbers in the
+Write an efficient algorithm to achieve the following. Given a set of numbers, find out the smallest and the largest numbers in
 
-list. Swap the smallest with the first element and largest with the last element. Find the second smallest and second largest and
+the list. Swap the smallest with the first element and largest with the last element. Find the second smallest and second
 
-swap them with their proper positions. Continue in this way until all the elements are sorted. Track the movement of every element in
+largest and swap them with their proper positions. Continue in this way until all the elements are sorted. Track the movement of
 
-the list while sorting. Do the necessary experimentation and analysis with your algorithm. 
+every element in the list while sorting. Do the necessary experimentation and analysis with your algorithm. 
 
 ## Assignment 4 Question :
 
