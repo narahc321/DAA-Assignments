@@ -1,0 +1,853 @@
+
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+\usepackage{blindtext, graphicx}
+\usepackage{algorithm}
+\usepackage{textcomp}
+\usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
+
+
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Page \thepage}
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{DAA ASSIGNMENT-5\\ GROUP-3\\Find k'th largest element using Heap Sort and track content of each node }
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{IIT2016039, IIT2016007, IIT2016019, IIT2016052 }%
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+Here, we have to find the kth largest element from a set of numbers using heap sort. An $O(n*log(n))$, $\Omega(n)$ algorithm has been designed to solve this problem.
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+Sorting, storing positions, time complexity, heaps
+\end{IEEEkeywords}
+
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction and Literature Survey}
+Sorting is any process of arranging items in a sequence ordered by some criterion. Here we are sorting the integers based on where they appear on the real number axis.
+
+Here we have to insert the n unsorted elements into a heap, ans then find the kth largest element using heap sort. We are going to extract the largest element from the heap (k-2) times and then find the larger of the two children of the root to store the kth largest element. This works because the 3 largest elements of a heap are among the root and it's 2 children, and since the root element is larger than any of it's children, the 2nd largest element is the larger of the two children of the root. Hence, after extracting (k-2) largest elements from the heap, we find the 2nd largest element in the remaining heap which is going to be the kth largest element. We are also tracking each position by storing which elements came to that particular position while sorting process is going on, so every time we swap an element two nodes are created(one for each position.)
+
+
+
+%\subsection{Subsection Heading Here}
+
+
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals use top floats exclusively.
+% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
+% floats. This can be corrected via the \fnbelowfloat command of the
+% stfloats package.
+
+
+\section{Algorithm Design}
+The algorithm has a simple $O(n^2)$, $\Omega(n^2)$, $\Theta(n^2)$ approach. 
+1. The array a stores the initial unsorted list.\\
+2. The ele array of struct element type as shown in pseudo code stores the changes made in position of that element and is used for tracking that element.\\
+3. The posarr array of element type shows the element stored in that position after a certain number of iterations as shown in pseudo code.\\
+4. In the function selectionsort, n/2 iterations are totally made to calculate the maximum and minimum element left in the remaining array, and that minimum element is swapped with the first while the maximum element is swapped with the last element of the remaining array.\\
+5. The struct node datatype is used to store the position of the element after a certain number of iterations it.\\
+The pseudo-code for the above explained algorithm is as follows:
+\begin{algorithm}
+\caption{Longest-sorted-partition}{$ $}\label{alg:euclid}
+\end{algorithm}
+\begin{algorithmic}[1]
+
+\State Struct node $\{$
+\State it,pos;
+\State struct node *link;
+\Comment{the struct node datatype is used to store the position of the element after a certain number of iterations it.}
+\State  $\};$
+\Comment{The ele array of struct element type as shown in pseudo code stores the changes made in position of that element and is used for tracking that element.}
+\State struct element $\{$
+\State struct node *head, *tail;
+\State  $\};$
+\Procedure{insertnode}{$arr,index,value,iteration$}
+\Comment{array contains the list of numbers}
+\State struct node *temp
+\State $temp.it \gets iteration$
+\State $temp.pos \gets value$
+\State $arr[index].tail.link \gets temp$
+\State $arr[index].tail \gets temp$
+\EndProcedure
+\Procedure{swap}{$posarr,ele, a,x,y,iteration$}
+\State $z\gets a[x]$
+\State $a[x]\gets a[y]$
+\State $a[y] \gets z$
+\State struct element temp
+\State $temp \gets ele[x]$
+\State $ele[x] \gets ele[y]$
+\State $ele[y] \gets temp$
+\State \Call{insertnode}{$ele,x,x,iteration$}
+\State \Call{insertnode}{$ele,y,y,iteration$}
+\State \Call{insertnode}{$pos_arr,x,a[x],iteration$}
+\State \Call{insertnode}{$posarr,y,a[y],iteration$}
+%\Call{insert_node}{$pos_arr,y,a[y],iteration$};
+\EndProcedure
+\bigskip
+\Procedure{selectionsort}{$posarr, ele, a, n$}
+\For { i = 0 to (n/2)-1}
+    \State {$min \gets a[i]$}
+    \State {$mindex \gets i$}
+    \For { j = i+1 to n-2}
+        \If {min $>$ a[j]}
+            \State {$min \gets a[j]$}
+            \State {$mindex \gets j$}
+        \EndIf
+    \EndFor
+    \If {\State $mindex \neq i$}
+        \State \Call{swap}{$posarr,ele,a,i,mindex,i+1$}
+    \EndIf
+    \State {$max \gets a[n-i-1]$}
+    \State {$maxdex \gets n-i-1$}
+    \For { j = i+1 to n-2}
+        \If {max $<$ a[j]}
+            \State {$max \gets a[j]$}
+            \State {$maxdex \gets j$}
+        \EndIf
+    \EndFor
+    \If {\State $maxdex \neq n-i-1$}
+        \State \Call{swap}{$posarr,ele,a,n-i-1,maxdex,i+1$}
+    \EndIf
+    
+\EndFor 
+\EndProcedure
+\end{algorithmic}
+
+
+
+\section{Time Complexity Analysis}
+
+The time complexity for the above mentioned algorithm depends on two factors one is the time require to create heap for the given array and other is to find the Kth largest element from the heap.Time complexity for building heap is
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale=.4]{1.png} 
+    \caption{Build heap time complexity}%\label{Saturation}
+  \end{center}
+\end{figure}
+  
+ Here h is the height of the tree.
+\textit {Worst Case }:The worst case is when we need to find the smallest element in the heap i.e nth largest in a heap of size n. In this case we have to delete n-2 elements from the heap, So maximum number of swaps occur.In swapping we insert two nodes one for each position which contains the element and iteration number. In worst case k is n so we have to remove n-2 elements from the heap. After removing each element we have to call heapify again which takes log(n) time. so time complexity to find the n largest element is (n-2)log(n).
+
+So time complexity in worst case is proportional to n+(n-2)log(n)
+i.e O(n*log(n)).
+
+
+ \textit {Best Case }:In the best case the given array is already is a max heap and the element we need to find is the 1st largest element. so we for heapify it takes n/2 steps and the fist element if found in O(1) time.
+
+So time complexity in worst case is proportional to n/2
+i.e O(n).
+
+ \textit {Average Case }:
+The expression for time complexity in the average case is bounded below by the expression for time complexity obtained in the best case and bounded above by the expression for time complexity obtained in the worst case.
+
+g(x) $<$ f(x) $<$ h(x) where g(x) is the tightest lower bound of the function and h(x) is the least upper bound of the function. 
+    here g(x) = $\Omega(n)$ and h(x) = O(n*log(n))
+
+
+\section{Space Complexity Analysis}
+For Building heap no extra space is required as all the elements gets swapped in the same array. Here as we tracking each element in a particular position we require some more space.
+
+As we cannot know the exact number of elements that will come to a particular position space will be unnecessarily wasted if we use arrays. So here we have implemented it using linked lists to reduce the space complexity.
+
+ \textit {Worst Case }: The worst case is when the given array is sorted in ascending order and when we need to find the smallest in the array. so that it takes maximum swaps for the array to become a max heap.Initially n nodes are created one for each position, There will be at max n swaps so 2n nodes will be created for building heap 3*n nodes are required and in finding the  nth largest element it takes n*log(n) swaps at max so in worst case extra 3*n+n*log(n) nodes are to be created.
+
+ \textit {Best Case }: The best case for space complexity is when we need to given array is in descending order and  we need to find the 1st largest number so that there will be no swaps only initial positions will be stored.
+ so only n nodes are required.
+\textit {Average Case }:
+The expression for space complexity in the average case is bounded below by the expression for space complexity obtained in the best case and bounded above by the expression for space complexity obtained in the worst case.
+
+\section{Experimental study}
+
+We have found the time complexity of the algorithm by calculating it in each step. Now to will verify it with the experimental results.
+
+We have plotted T VS N graph where is T is the total number of computations performed for a given N. The T and N values for calculating in rows  graphs for them are plotted accordingly.
+
+% \begin{table}[h!]
+%   \begin{center}
+%     \caption{N vs T in Each Row}
+%     % \label{tab:table1}
+% \begin{tabular}{ |p{1em}|p{1em}|p{1em}|p{1em}|p{1em}|p{1em}|p{1em}|p{1em}|p{1em}|p{1em}|  }
+
+% %  \hline
+ 
+% %  \multicolumn{10}{|c|}{N vs T in Each Row} \\
+%   \hline
+%  N  & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+% %  Afghanistan   & AF    &AFG&   004\\
+% %  Aland Islands&   AX  & ALA   &248\\
+% %  Albania &AL & ALB&  008\\
+% %  Algeria    &DZ & DZA&  012\\
+% %  American Samoa&   AS  & ASM&016\\
+% %  Andorra& AD  & AND   &020\\
+% %  Angola& AO  & AGO&024\\
+%  \hline
+% \end{tabular}
+% \end{center}
+% \end{table}
+
+\begin{table}[h!]
+  \begin{center}
+    \caption{N vs T graph}
+    \label{tab:table1}
+    \begin{tabular}{l|l|l|l}
+      \textbf{n} & \textbf{t\textsubscript{best}} & \textbf{t\textsubscript{average}} & \textbf{t\textsubscript{worst}}\\ % <-- added & and content for each column
+%       $\alpha$ & $\beta$ & $\gamma$ & $\delta$ \\ % <--
+      \hline
+      10 & 55 & 351 & 448 \\
+      20 & 110 & 387 & 1173 \\
+      30 & 165 & 976 & 1976 \\
+      40 & 220 & 545 & 2909 \\
+      50 & 275 & 3375 & 3868 \\
+      60 & 330 & 4290 & 4801 \\
+      70 & 385 & 1385 & 5838 \\ % <--
+      80 & 440 & 2221 & 6901 \\
+      90 & 495 & 1740 & 8016 \\
+      100 & 550 & 2113 & 9053 \\
+      
+%       2 & 10.1 & b & f\\ % <--
+%       3 & 23.113231 & c & ]g\\ % <--
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale=.4]{time.png} 
+    \caption{T(y-axis) VS N(x-axis) }\label{Saturation}
+  \end{center}
+\end{figure}
+
+ Now to took each node creation uses one unit of space then the values and graph for space complexity is as follows:
+\begin{table}[h!]
+  \begin{center}
+    \caption{N vs space graph}
+    \label{tab:table2}
+    \begin{tabular}{l|l|l|l}
+      \textbf{n} & \textbf{t\textsubscript{best}} & \textbf{t\textsubscript{average}} & \textbf{t\textsubscript{worst}}\\ % <-- added & and content for each column
+%       $\alpha$ & $\beta$ & $\gamma$ & $\delta$ \\ % <--
+      \hline
+      10 & 10 & 26 & 126 \\
+      20 & 20 & 284 & 336 \\
+      30 & 30 & 178 & 570 \\
+      40 & 40 & 204 & 844 \\
+      50 & 50 & 506 & 1126 \\
+      60 & 60 & 736 & 1400 \\
+      70 & 70 & 998 & 1706 \\ % <--
+      80 & 80 & 752 & 2020 \\
+      90 & 90 & 458 & 2350 \\
+      100 & 100 & 1056 & 2656 \\
+
+      
+%       2 & 10.1 & b & f\\ % <--
+%       3 & 23.113231 & c & ]g\\ % <--
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[scale=.4]{space.png} 
+    \caption{Nodes(y-axis) VS N(x-axis) }%\label{Saturation}
+  \end{center}
+\end{figure}
+
+\section{Discussions and Comparison with other group}
+
+Thus from time complexity analysis and experimental study we can see the overall complexity of the algorithm is always proportional to $n$ in best case and $n*log(n)$ in worst case.
+
+The space occupied in best case is proportional to $n$ and in worst case it is proportional to n*log(n).
+    Thus the experimental study proves that our time complexity and space complexity analysis is correct.
+    
+Now if we compare the algorithm of other group with our group. There are basically two differences one major and one minor. The one minor is that in our algorithm we are stopping the delete process at k-2 so that we can easily find the required element comparing the 2nd and 3rd element in the heap.\\
+    The major difference is that in tracing each node the other group is just printing the numbers that are swapped ,when the input is very large you cannot find the data of a particular node easily in their case, But in our algorithm we are maintaining a linked list for each node so that every time a new element comes to that node we insert it in corresponding linked list so that if we need particular information of a node we can get that easily. 
+
+\section{Conclusion}
+ we have tried to design an efficient algorithm that sorts a given list by finding the largest and smallest element along every iteration and swapping it up with the first and last indexed element of the remaining list. A simple approach of traversing across the array (n/2) times and decreasing size of remaining array by 2 with each iteration has been used, the details of implementation and pseudo code along with relevant calculations of time complexities and experimental details is done above to the best of our abilities. Hence, it can be concluded that the given question can be solved in $O(n^2)$,  $\Omega(n^2)$, $\Theta(n^2)$. Moreover, all the possible cases have been discussed for the formation of as efficient algorithm as possible.
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+% \appendices
+% \section{Proof of the First Zonklar Equation}
+
+
+% % use section* for acknowledgement
+% \section*{Acknowledgment}
+
+
+% The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+% \ifCLASSOPTIONcaptionsoff
+%   \newpage
+% \fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+% \begin{thebibliography}{1}
+
+% \bibitem{IEEEhowto:kopka}
+% H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%   0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+% \end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+% \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{picture}}]{John Doe}
+% \blindtext
+% \end{IEEEbiography}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+\end{document}
+
+
+
