@@ -19,9 +19,9 @@ Write an efficient algorithm to achieve the following. Given a set of numbers, f
 
 the list. Swap the smallest with the first element and largest with the last element. Find the second smallest and second
 
-largest and swap them with their proper positions. Continue in this way until all the elements are sorted. Track the movement of
+largest and swap them with their proper positions. Continue in this way until all the elements are sorted. Track the movement
 
-every element in the list while sorting. Do the necessary experimentation and analysis with your algorithm. 
+of every element in the list while sorting. Do the necessary experimentation and analysis with your algorithm. 
 
 ## Assignment 4 Question :
 
