@@ -15,10 +15,13 @@ necessary experimentation and analysis with your algorithm.
 
 ## Assignment 3 Question :
 
-Write an efficient algorithm to traverse from node i to node j in a given complete binary tree. Note that i and j values are
+Write an efficient algorithm to achieve the following. Given a set of numbers, find out the smallest and the largest numbers in the
 
-given as input to your algorithm (in addition to the tree). Do the necessary experimentation and analysis with your algorithm.
+list. Swap the smallest with the first element and largest with the last element. Find the second smallest and second largest and
 
+swap them with their proper positions. Continue in this way until all the elements are sorted. Track the movement of every element in
+
+the list while sorting. Do the necessary experimentation and analysis with your algorithm. 
 
 ## Assignment 4 Question :
 
