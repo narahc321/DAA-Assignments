@@ -1,0 +1,4 @@
+
+plot "./average.dat" using 1:2 title "Average Case" with linespoints, \
+    "./best.dat" using 1:2 title "Best Case" with linespoints, \
+    "./worst.dat" using 1:2 title "Worst Case"  with linespoints
